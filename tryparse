@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "1a";
+
+            int a;
+
+            bool res = int.TryParse(str, out a);
+            Console.WriteLine(res);
+            Console.WriteLine();
+            if (res)
+            {
+                Console.WriteLine("Yes, its correct" + a);
+            }
+            else
+            {
+                Console.WriteLine("You fool");
+            }
+           
+            
+           
+        }
+    }
+}
