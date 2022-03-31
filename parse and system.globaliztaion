@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str1 = "5";
+            string str2 = "6,2";
+            string str3 = "5.5";
+            int a = int.Parse(str1); // работает только со строкой
+            double b = double.Parse(str2);
+            NumberFormatInfo numberFormatInfo = new NumberFormatInfo()
+            {
+                NumberDecimalSeparator = ".",
+            };
+            double c = double.Parse(str3);
+            Console.WriteLine(str2 + a);
+            
+           
+        }
+    }
+}
