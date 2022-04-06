@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double v1, v2;
+            Console.WriteLine("V1 ?");
+            v1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("V2 ?");
+            v2 = double.Parse(Console.ReadLine());
+
+            double result = (v1 + v2) / 2;
+            Console.WriteLine(result);
+            Console.ReadKey();
+        }
+    }
+}
