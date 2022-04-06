@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            uint nechet = 0;
+            uint chet = 0;
+            int nsum = 0;
+            int sum = 0;
+            Console.WriteLine("Fist number of range");
+            int firstNumberRange = int.Parse(Console.ReadLine());
+            Console.WriteLine("Last number of range");
+            int lastNumberRange = int.Parse(Console.ReadLine());
+
+            while (firstNumberRange <= lastNumberRange)
+            {           
+                if (firstNumberRange % 2 == 0)
+                {
+                    chet++;
+                    sum += firstNumberRange;
+                }
+                else
+                {
+                    nechet++;
+                    nsum += firstNumberRange;
+                }
+                firstNumberRange++;
+            }
+            Console.WriteLine("Count of Chet " + chet);
+            Console.WriteLine("Count of Nechet " + nechet);
+            Console.WriteLine("Summa of Chet " + sum);
+            Console.WriteLine("Summa of Nechet " + nsum);
+        }
+    }
+}
