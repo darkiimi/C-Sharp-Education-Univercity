@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Arrayy;
+            Arrayy = new int[3];
+
+            for(int i = 0; i < 3; i++)
+            {
+                Arrayy[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("__________________________________________");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("[" + Arrayy[i] + "]");
+            }
+            Console.WriteLine();
+            int sum;
+            sum = Arrayy.First() + Arrayy.Last();
+            Console.WriteLine("Addition of the first and last array elements = " + sum);
+            double summ;
+            summ = Arrayy.Average();
+            Console.WriteLine("Average of an array = " + summ);
+            Console.WriteLine("Max of an array = " + Arrayy.Max());
+            Console.WriteLine("Min of an array = " + Arrayy.Min());
+            Console.WriteLine("Сумма всех элементов массива = " + Arrayy.Sum());
+            Console.WriteLine("What is type? = " + Arrayy.GetType());
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Repeat for one number");
+            int[] myArray = Enumerable.Repeat(1, 3).ToArray();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(myArray[i]);
+            }
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Repeat for one number from position");
+            int[] mysArray = Enumerable.Range(101, 3).ToArray();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(mysArray[i]);
+            }
+
+        }
+    }
+}
