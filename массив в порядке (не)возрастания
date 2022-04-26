@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = {2, 1, 2, 2, 4, 4, 6, -1, -1, -1};
+            int[] resultsUNIQ = array.OrderBy(x => x).ToArray();
+            for (int i = 0; i < resultsUNIQ.Length; i++)
+            {
+                Console.WriteLine(resultsUNIQ[i]);
+            }
+            Console.WriteLine("ddddddddddddddd");
+            int[] wow = resultsUNIQ.OrderByDescending(x => x).ToArray();
+            for (int i = 0; i < wow.Length; i++)
+            {
+                Console.WriteLine(wow[i]);
+            }
+        }
+    }
+}
