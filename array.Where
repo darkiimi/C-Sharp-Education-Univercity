@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = {3, 4, 5, 6, 7, 2, -1, -4, 0};
+            Console.WriteLine(array.Where(x => (x % 2 == 0) && (x > 0)).Min());
+        }
+    }
+}
