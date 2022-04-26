@@ -13,7 +13,9 @@ namespace Csharp_education
         static void Main(string[] args)
         {
             int[] array = {3, 4, 5, 6, 7, 2, -1, -4, 0};
-            Console.WriteLine(array.Where(x => (x % 2 == 0) && (x > 0)).Min());
+            Console.WriteLine("Минимальное четное положительное = " + array.Where(x => (x % 2 == 0) && (x > 0)).Min());
+            Console.WriteLine("Максимальное нечетное = " + array.Where(x => (x % 2 != 0) && (x > 0)).Max());
+            Console.WriteLine("Разность между макс четным и мин нечетным = " + (array.Where(x => (x % 2 == 0) && (x > 0)).Max() - array.Where(x => (x % 2 != 0)).Min()));
         }
     }
 }
