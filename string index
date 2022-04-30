@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Wow, this is bullshit!?";
+            if (str[^1] == '!')
+            {
+                Console.WriteLine("Восклицательное");
+            }
+            else
+            {
+                Console.WriteLine("No vosklicatel'niy");
+            }
+
+
+
+
+
+
+        }
+    }
+}
