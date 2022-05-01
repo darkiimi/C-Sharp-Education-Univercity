@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] massive = new int[,]
+            {
+                {1, 56, -1},
+                {25, 211, 21},
+                {-100, 3, 333},
+            };
+            foreach (var item in massive)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("_________________________________________________________________________");
+            foreach (var item in massive)
+            {
+                Console.Write(item + " ");  
+            }
+            Console.WriteLine();
+            Console.WriteLine("_________________________________________________________________________");
+            int hieght = massive.GetLength(0);
+            int length = massive.GetLength(1);
+
+            for (int i = 0; i < hieght; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    Console.Write(massive[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
