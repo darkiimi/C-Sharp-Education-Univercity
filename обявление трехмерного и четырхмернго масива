@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // ОБЪЯВЛЕНИЕ ТРЕХМЕРНОГО МАССИВА
+            int[,,] arrayw =
+            {
+                {
+                    {1, 2, 3}, // 1 страница
+                    {4, 1, 5}
+                },
+                
+                {
+                    {4,31,24}, // 2 stranica
+                    {24,1,1}
+                },
+
+                {
+                    {13124, 13, 12 }, // 3 stranica
+                    {23, 0, 0 }
+                }
+            };
+
+
+            Console.WriteLine("-----------------------------------");
+
+            int[,,,] arrayws =
+            {
+                {                        // 1 тетрадь
+                    {
+                        {1, 2, 3},
+                        {4, 1, 5}
+                    },
+
+                    {
+                        {4,31,24},
+                        {24,1,1}
+                    },
+
+                    {
+                        {13124, 13, 12 },
+                        {23, 0, 0 }
+                    }
+                },
+
+
+                {                          // 2 тетрадь
+                    {
+                        {1, 2, 3},
+                        {4, 1, 5}
+                    },
+
+                    {
+                        {4,31,24},
+                        {24,1,1}
+                    },
+
+                    {
+                        {13124, 13, 12 },
+                        {23, 0, 0 }
+                    }
+                },
+
+
+                {                           // 3 book
+                    {
+                        {1, 2, 3},
+                        {4, 1, 5}
+                    },
+
+                    {
+                        {4,31,24},
+                        {24,1,1}
+                    },
+
+                    {
+                        {13124, 13, 12 },
+                        {23, 0, 0 }
+                    }
+                },
+
+            };
+
+
+        }
+    }
+}
