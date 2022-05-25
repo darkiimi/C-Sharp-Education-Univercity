@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,,] array = new int[3,3,3];
+            int arrayRank = array.Rank;
+            int arrayLength = array.Length;
+            Console.WriteLine(arrayRank);
+            Console.WriteLine(arrayLength);
+
+            int[,,,] arrayS = new int[3, 3, 3, 3];
+            int arraysRank = arrayS.Rank;
+            int arraysLength = arrayS.Length;
+            Console.WriteLine(arraysRank);
+            Console.WriteLine(arraysLength);
+
+        }
+    }
+}
