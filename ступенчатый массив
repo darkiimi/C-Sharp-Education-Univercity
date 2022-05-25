@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[][] myarray = new int[3][];
+           myarray[0]= new int[5];
+            myarray[1] = new int[11];
+            myarray[2] = new int[2];
+            myarray[2][1] = 123;
+            int count = 0;
+
+            for (int i = 0; i < myarray[2].Length; i++)
+            {
+                Console.WriteLine(myarray[2][i]);
+                count++;
+            }
+            Console.WriteLine("Count = " + count);
+
+            Console.WriteLine("-------------------");
+            int[] arr = myarray[0];
+
+            for (int i = 0; i < myarray[0].Length; i++)
+            {
+                Console.WriteLine(myarray[0][i]);
+                
+            }
+            Console.WriteLine("-------------------");
+
+            Random random = new Random();
+
+            for(int i = 0; i < myarray.Length; i++)
+            {
+                for (int j = 0; j < myarray[i].Length; j++ )
+                {
+                    myarray[i][j] = random.Next(100);
+                }
+            }
+
+            for (int i = 0; i < myarray.Length; i++)
+            {
+                for (int j = 0; j < myarray[i].Length; j++)
+                {
+                    Console.Write(myarray[i][j] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
