@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[20];
+            Random random = new Random();   
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(50, 100);
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("              --------------------                        ");
+
+            int[] arrayOrderBy = array.OrderBy(x => x).ToArray();
+
+            for (int i = 0;i < arrayOrderBy.Length; i++)
+            {
+                Console.Write(arrayOrderBy[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("              --------------------                        ");
+
+            int[] arrayOrderByDescending = array.OrderByDescending(x => x).ToArray();
+
+            for (int i = 0; i < arrayOrderByDescending.Length; i++)
+            {
+                Console.Write(arrayOrderByDescending[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine
+                ("===============================");
+
+            int[,] array2 = new int[5, 10];
+
+            for (int i = 0; i < array2.GetLength(0) ; i++)
+            {
+                for (int j = 0; j < array2.GetLength(1) ; j++)
+                {
+                    array2[i, j] = random.Next(1, 50);
+                }
+            }
+
+            for (int i = 0; i < array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < array2.GetLength(1); j++)
+                {
+                    Console.Write(array2[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("--------------------   ");
+
+
+            
+            Index indexmain = ^1;
+            Index second = 0;
+            Console.WriteLine("Вывод последнего индекса с array :" + array[indexmain]);
+            Console.WriteLine("Вывод первого индекса с array :" + array[second]);
+            Console.WriteLine("Вывод предпоследнего индекса с array :" + array[^2]);
+
+
+
+        }
+    }
+}
