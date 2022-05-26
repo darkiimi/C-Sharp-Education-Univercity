@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        /// <summary>
+        /// Возвращает сумму двух интов
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static int sum(int a, int b)
+        {
+            return a + b;
+        }
+        /// <summary>
+        /// Возвращает сумму трех интов
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        static int sum(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+        /// <summary>
+        /// Возвращает сумму двух дабблов
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        static double sum(double a, double b)
+        {
+            return a + b;
+        }
+        static void Main()
+        {
+            Console.WriteLine(sum(1, 5));
+            Console.WriteLine(sum(1.1, 5.23));
+            Console.WriteLine(sum(1, -14, 10));
+            
+        }
+    }
+}
