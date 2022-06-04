@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main()
+        {
+            var name = "Alex Erohin";
+            var age = 26;
+            var isProgrammer = true;
+
+            // Определяем тип переменных
+            Type nameType = name.GetType();
+            Type ageType = age.GetType();
+            Type isProgrammerType = isProgrammer.GetType();
+
+            // Выводим в консоль результаты
+            Console.WriteLine("Тип name: {0}", nameType);
+            Console.WriteLine("Тип age {0}", ageType);
+            Console.WriteLine("Тип isProgrammer {0}", isProgrammerType);
+            Console.ReadLine();
+
+        }
+
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
