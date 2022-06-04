@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "Мое приложение";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine("Привет, это мой проект!");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ReadLine();
+            
+        }
+    }
+}
