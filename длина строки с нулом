@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {   
+        static void Main()
+        {
+            ConsoleSomeThing();
+            //string text = "Omegalol";
+            string text1 = "2313123123213123";
+            string result = text1 ?? "" ;
+
+            Console.WriteLine("Длина строки " + result.Length);
+
+
+
+        }
+
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
