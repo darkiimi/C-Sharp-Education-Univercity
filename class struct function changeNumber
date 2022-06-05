@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    struct myStruct
+    {
+        public int a;
+        public int b;
+        public int c;
+    }
+
+    class myClass
+    {
+        public int a1;
+        public int b1;
+        public int c1;
+    }
+    class Program
+    {   
+        static void changeNumberStruct(myStruct myStruct)
+        {
+            myStruct.a = 12123213;
+            myStruct.b = -10;
+            myStruct.c = 10000;
+        }
+
+        static void changeNumberClass(myClass myClass)
+        {
+            myClass.a1 = 1;
+            myClass.b1 = 2;
+            myClass.c1 = 3;
+        }
+
+
+        static void Main()
+        {
+            myStruct myStruct = new myStruct();
+            myClass myClass = new myClass();
+            changeNumberClass(myClass);
+            changeNumberStruct(myStruct);
+            Console.WriteLine("Числа измененные после changeNumberStruct:"); // стракт хранится в стеке
+            Console.WriteLine(myStruct.a);
+            Console.WriteLine(myStruct.b);
+            Console.WriteLine(myStruct.c);
+            Console.WriteLine("Числа измененные после changeNumberClass:"); // хранится как ссылочные типы
+            Console.WriteLine(myClass.a1);
+            Console.WriteLine(myClass.b1);
+            Console.WriteLine(myClass.c1);
+
+        }
+
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
