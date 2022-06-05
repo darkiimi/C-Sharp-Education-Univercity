@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {   
+        static void changeNumber(ref int a)
+        {
+            a = -5;
+        }
+        static void Main()
+        {
+            ConsoleSomeThing();
+
+            int a = 1;
+            changeNumber(ref a);
+            Console.WriteLine(a);
+        }
+
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
