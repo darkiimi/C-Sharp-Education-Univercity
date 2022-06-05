@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void changeArray(ref int[] newarray)
+        {
+            newarray = new int[10];
+        }
+        static void Main()
+        {
+            int[] myArray = { 1, 123, -900, 0 };
+            changeArray(ref myArray);
+
+            for(int i = 0; myArray.Length > 0; i++)
+            {
+                Console.Write(myArray[i] + "\t");
+            }
+        }
+
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
