@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+       static void Delete<T>(ref T[] ourArray, int index)
+        {
+            T[] newArray = new T[ourArray.Length-1];
+
+            for (int i = 0; i < index; i++)
+            {
+               newArray[i] = ourArray[i];
+            }
+            for (int i = index + 1; i < ourArray.Length; i++)
+            {
+                newArray[i-1] = ourArray[i];
+            }
+            ourArray = newArray;
+
+        }
+       static void Main()
+        {
+            int[] ourArray = { 10, 20, 30, 20, 0, -10000 };
+            string[] ourrArray = { "1111", "wtf", "stfu", "1111sdsdsd", "ddd" };
+            Delete(ref ourArray, 3);
+            for (int i = 0;i < ourArray.Length;i++)
+            {
+                Console.WriteLine(ourArray[i]);
+            }
+        }
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
