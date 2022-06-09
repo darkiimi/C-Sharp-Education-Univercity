@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+       static void InsertByIndex(ref int[] ourArray, int value, int Index)
+        {
+            int[] newarray = new int[ourArray.Length + 1];
+            newarray[Index] = value;
+            for(int i = 0; i < Index; i++)
+                newarray[i] = ourArray[i];
+
+            for (int i = Index; i < ourArray.Length; i++)
+                newarray[i + 1] = ourArray[i];
+            ourArray = newarray;
+ 
+        }
+       static void AddFirst(ref int[] ourArray, int value)
+        {
+           InsertByIndex(ref ourArray, value, 0);
+        }
+       static void AddLast(ref int[] ourArray, int value)
+        { 
+            InsertByIndex(ref ourArray, value, ourArray.Length);
+        }
+       static void Main()
+        {
+            int[] ourArray = { 10, 211, -300 };
+            InsertByIndex(ref ourArray, 1000, 0);
+            AddFirst(ref ourArray, 999999999);
+            AddLast(ref ourArray, 0);
+            for(int i = 0;i < ourArray.Length;i++)
+            {
+                Console.WriteLine(ourArray[i]);
+            }
+        }
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
