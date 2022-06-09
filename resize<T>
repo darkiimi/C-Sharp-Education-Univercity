@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        
+       static void Resize<T>(ref T[] array, int NewSize)
+        {
+            T[] newArray = new T[NewSize];
+            for (int i = 0; i < newArray.Length && i < array.Length; i++)
+            {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+       static void Main()
+        {
+            int[] arrayint = { 4, 5, 10, -10, 1000, 9999 };
+            string[] arraystring = { "wtf", "holy", "shit", "omg", "cringe" };
+            Console.WriteLine("Количество элементов в стринг = "+ arraystring.Length);
+            Resize(ref arrayint, 10);
+            Resize(ref arraystring, 1);
+            for (int i = 0; i < arrayint.Length; i++)
+            {
+                Console.WriteLine(arrayint[i]);
+            }
+            Console.WriteLine("-----------");
+            for(int i = 0;i < arraystring.Length; i++)
+            {
+                Console.WriteLine(arraystring[i]);
+            }
+            Console.WriteLine("Количество элементов в стринг после Resize = " + arraystring.Length);
+        }
+        private static void ConsoleSomeThing()
+        {
+            // Настраиваем консольный интерфейс (CUI)
+            Console.Title = "saiyyyyyyyyyy";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+    }
+}
