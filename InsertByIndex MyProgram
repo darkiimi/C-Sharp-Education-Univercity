@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void InsertByIndex(ref int[] ourarray, int value, int index)
+        {
+            int[] newarray = new int[ourarray.Length+1];
+            newarray[index] = value;
+
+            for(int i = 0; i < index; i++)
+            {
+                newarray[i] = ourarray[i];
+            }
+            for(int i = index; i < ourarray.Length; i++)
+            {
+                newarray[i+1] = ourarray[i];
+            }
+            ourarray = newarray;
+        }
+        static void Main()
+        {
+            
+            int[] ourarray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            Console.WriteLine("Наш массив состоит из " + ourarray.Length + " элементов");
+            Console.WriteLine("Хотите добавить элемент в массив? Да/Нет");
+            string answer = Console.ReadLine();
+            if(answer == "Да")
+            {
+                Console.WriteLine("Введите значение");
+                int value = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите какой индекс");
+                int index = int.Parse(Console.ReadLine());
+                InsertByIndex(ref ourarray, value, index);
+            }
+            else
+            {
+                Console.WriteLine("Значит, не хотите...");
+            }
+            Console.WriteLine("Теперь наш массив состоит из " + ourarray.Length + " элементов");
+            for (int i = 0; i < ourarray.Length; i++)
+            {
+                Console.Write(ourarray[i] + " ");
+
+            }
+        }
+    }
+}
