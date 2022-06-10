@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Params(params object[] parameters)
+        {
+            string message = "Тип данных - {0}, значение - {1}";
+
+            foreach(var item in parameters)
+            {
+                Console.WriteLine(message, item.GetType(), item);
+            }
+        }
+        static void Main()
+        {
+            Params("d", 3, 14.00000123, 14.1, "lmao", true);
+        }
+    }
+}
