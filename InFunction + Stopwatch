@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        struct TestsDoubles
+        {
+            public double a;
+            public double b;
+            public double c;
+            public double d;
+            public double e;
+            public double f;
+            public double g;
+            public double h;
+            public double i;
+            public double j;
+        }
+
+        static void InFunction(in TestsDoubles value)
+        {
+
+        }
+        static void SimpleFunction(TestsDoubles value)
+        {
+
+        }
+        static void Main()
+        {
+            TestsDoubles value = new TestsDoubles();
+
+            Stopwatch sw = Stopwatch.StartNew();
+
+            for(int i = 0; i < int.MaxValue; i++)
+            {
+                SimpleFunction(value);
+            }
+            sw.Stop(); Console.WriteLine($"Прошло времени в SimpleFunction: {sw.ElapsedMilliseconds} миллисекунд");
+            sw.Restart();
+
+            for (int i = 0; i < int.MaxValue; i++)
+            {
+                InFunction(value);
+            }
+            sw.Stop(); Console.WriteLine($"Прошло времени в InFunction: {sw.ElapsedMilliseconds} миллисекунд");
+        }
+    }
+}
