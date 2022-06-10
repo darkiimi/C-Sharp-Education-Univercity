@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Sum(int a, int b, int c, bool enableLogging, int d)
+        {
+            int result = a + b + c + d;
+            string message = "4-ти";
+            Console.WriteLine($"Сумма {message} элементов: " + result);
+            if (enableLogging)
+            {
+                Console.WriteLine("Сумма первых двух: " + a + b);
+                Console.WriteLine("Сумма первого и последнего: " + a + d);
+            }
+        }
+        static void Main()
+        {
+            int first = 0;
+            int second = -100;
+            int third = 999999;
+            Sum(a: first, b: second, c: third, d: 123, enableLogging: true);
+        }
+    }
+}
