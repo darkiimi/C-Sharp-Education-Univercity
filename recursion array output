@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void recursion(int[] ourarray, int i = 0)
+        {
+            if (i >= ourarray.Length)
+            {
+                return;
+            }
+            Console.WriteLine(ourarray[i]);
+            recursion(ourarray, i + 1);
+        }
+        static void Main()
+        {
+            int[] array = { -1, 10, 500, 10000, -10000};
+            recursion(array);
+        }
+    }
+}
