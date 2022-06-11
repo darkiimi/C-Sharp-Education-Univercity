@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static int AdditionNumber(int value)
+        {
+            if(value < 10)
+            {
+                return value;
+            }
+            int sumDigit = value % 10;
+            int NextValue = value / 10;
+            return AdditionNumber(NextValue) + sumDigit;
+
+
+        }
+
+        static void Main()
+        {
+            int number = 1234;
+
+            number = AdditionNumber(number);
+            Console.WriteLine(number);
+        }
+    }
+}
