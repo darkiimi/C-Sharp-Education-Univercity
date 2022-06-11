@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+
+        static void Main()
+        {
+            int s = 4;
+            double a = 5.2;
+            float f = 2.3F;
+            float b = (float)a;
+            float result = s + f;
+            int resul1 = (int)(s + f);
+
+        }
+    }
+}
