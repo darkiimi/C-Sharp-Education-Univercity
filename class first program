@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        enum Color
+        {
+            Red,
+            Green,
+            Blue,
+            Yellow,
+            Purple,
+            White,
+            Black
+        }
+        
+        class Point
+        {
+            public int x;
+            public int y;
+            public Color color;
+        }
+        static void Main()
+        {
+            Point pointS = new Point();
+
+            pointS.x = 100;
+            pointS.y = 74;
+            pointS.color = Color.Red;
+
+            Console.WriteLine($"X: |{pointS.x}| Y: |{pointS.y}|   -   Our Color: {pointS.color}");
+
+        }
+    }
+}
