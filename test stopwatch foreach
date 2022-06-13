@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static double[] CreateRandomArray(uint count, int min, int max)
+        {
+            Random random = new Random();
+            double[] array = new double[count];
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = random.Next(min, max);
+            }
+            return array;
+        }
+        static void Main()
+        {
+            Stopwatch sw = Stopwatch.StartNew();
+            double[] numbers;
+            numbers = CreateRandomArray(1000, -1000, 1000);
+
+            var result = from value in numbers where value > 0 select value;
+            foreach(int value in result)
+            {
+                Console.WriteLine(value);
+            }
+            sw.Stop();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Прошло времени за multi-method-array  {sw.ElapsedMilliseconds}");
+            Console.BackgroundColor = ConsoleColor.Black;
+            sw.Restart();
+
+            List<double> pos = new List<double>();
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if(numbers[i] > 0)
+                {
+                    pos.Add(numbers[i]);
+                }
+            }
+            foreach(int value in pos)
+            {
+                Console.WriteLine(value);
+            }
+            sw.Stop();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Прошло времени за dynamic-array-  {sw.ElapsedMilliseconds}");
+        }
+    }
+}
