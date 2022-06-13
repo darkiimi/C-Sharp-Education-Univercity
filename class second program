@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Students
+    {
+        public Guid id;
+        public string nameFirst;
+        public string nameMiddle;
+        public string nameLast;
+        public int age;
+        public string group;
+    }
+    class Program
+    {
+        static Students GetStudent()
+        {
+            var student = new Students();
+
+            student.id = Guid.NewGuid();
+            student.nameFirst = "Rodion";
+            student.nameMiddle = "Mikhaylov";
+            student.nameLast = "Mikhaylovich";
+            student.age = 19;
+            student.group = "PIKD";
+            
+            return student;
+        }
+
+        static void Print(Students student)
+        {
+            Console.WriteLine($"Name: {student.nameFirst}");
+            Console.WriteLine($"Familiya: {student.nameMiddle}");
+            Console.WriteLine($"Ot4estvo: {student.nameLast}");
+            Console.WriteLine($"ID: {student.id}");
+            Console.WriteLine($"Age: {student.age}");
+            Console.WriteLine($"Group: {student.group}");
+
+        }
+
+        static void Main()
+        {
+            var student = GetStudent();
+            Print(student);
+        }
+    }
+}
