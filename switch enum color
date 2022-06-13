@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        enum Color
+        {
+            Red,
+            Green,
+            Blue,
+            Yellow,
+            Purple,
+            White,
+            Black
+        }
+
+        static void Main()
+        {
+            string str = Console.ReadLine();
+            Color color = (Color)Enum.Parse(typeof(Color), str, ignoreCase: true);
+            Console.WriteLine(color);
+
+            switch (color)
+            {
+                case Color.Red:
+
+                    break;
+                case Color.Green:
+
+                    break;
+                case Color.Blue:
+
+                    break;
+                case Color.Yellow:
+
+                    break;
+                case Color.Purple:
+
+                    break;
+                case Color.White:
+
+                    break;
+                case Color.Black:
+                    Console.WriteLine("АХАХХАХАХА ЧЕРНЫЙ");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}
