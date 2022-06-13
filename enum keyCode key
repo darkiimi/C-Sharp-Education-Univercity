@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    class Program
+    {
+        static void Main()
+        {
+            while (true)
+            {
+                ConsoleKey key = Console.ReadKey().Key;
+                int keyCode = (int)key;
+
+                Console.WriteLine($"\tEnum: {keyCode} Key: {key} ");
+                if (key == ConsoleKey.Escape)
+                {
+                    break;
+                }
+
+            }
+        }
+    }
+}
