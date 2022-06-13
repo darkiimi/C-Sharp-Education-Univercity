@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Csharp_education
+{
+    enum Cars
+    {
+        Toyoto = 1,
+        Mersedes,
+        UAZ,
+        Tesla,
+        F1
+    }
+    class Car
+    {
+        private int carSpeed = 0;
+        public string carName = Enum.GetName(typeof(Cars), 1);
+        public string oldcarName = Enum.GetName(typeof(Cars), 1);
+        public string newcar = null;
+        public void ChangeTheCar()
+        {
+            int count = 0;
+            var CountCars = Enum.GetNames(typeof(Cars)).Length;
+            Console.WriteLine($"Введите от 1 до {CountCars}");
+            foreach(var Car in Enum.GetValues(typeof(Cars)))
+            {
+                Console.WriteLine($"{count+1}: {Car}");
+                count++;
+            }
+            int idCar = int.Parse(Console.ReadLine());
+            newcar = Enum.GetName(typeof(Cars), idCar);
+        }
+        public void ShowTheCar()
+        {
+            if(oldcarName == newcar)
+            {
+                Console.WriteLine("Ты дебил, у тебя уже есть эта тачка");
+            }
+            
+            else
+                Console.WriteLine($"Фирма тачки - {carName}, поменяли на фирму: {newcar}");
+        }
+        public void CurrentSpeed()
+        {
+            if(carSpeed == 0)
+            {
+                Console.WriteLine($"Машина стоит на месте.");
+            }
+            if(carSpeed > 0)
+            {
+                Console.WriteLine($"Машина едет ВПЕРЕД со скоростью: {carSpeed} км\\ч");
+            }
+            if(carSpeed < 0)
+            {
+                Console.WriteLine($"Машина едет НАЗАД со скоростью: {-carSpeed} км\\ч");
+            }
+        }
+        public void GoForward()
+        {
+            carSpeed = 120;
+        }
+        public void GoBackward()
+        {
+            carSpeed = -15;
+        }
+        public void StopCar()
+        {
+            carSpeed = 0;
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Car carFirst = new Car();
+            
+            carFirst.CurrentSpeed();
+            carFirst.GoBackward();
+            carFirst.CurrentSpeed();
+            carFirst.GoForward();
+            carFirst.CurrentSpeed();
+            carFirst.StopCar();
+            carFirst.CurrentSpeed();
+            Console.WriteLine("Имя нашей тачки:" + carFirst.carName);
+            Console.WriteLine("Хотите поменять тачку на другую?  Y/N");
+            string an = Console.ReadLine();
+            if (an == "Y")
+            {
+                carFirst.ChangeTheCar();
+                carFirst.ShowTheCar();
+            }
+            else
+                Console.WriteLine("Тогда пошел в жопу");
+
+        }
+    }
+}
