@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Reflection;
+
+
+namespace Csharp_education
+{
+    class Example
+    {
+        int a = 5;
+        public int b = 100;
+        private int c = -33;
+    }
+    class Program
+    {
+        static void Main()
+        {
+            var typeInfo = typeof(Example).
+                GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+
+            foreach(var item in typeInfo)
+            {
+                Console.WriteLine($"{item.Name}\t IsPrivate: {item.IsPrivate},    IsPublic: {item.IsPublic}");
+            }
+        }
+    }
+}
