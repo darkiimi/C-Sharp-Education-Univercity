@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Reflection;
+
+
+namespace Csharp_education
+{
+    class AK_47
+    {
+        bool isLoaded = false;
+        public int gunBullet = 0;
+        private const int gunMaxBullet = 30;
+        private int bulletshot = 0;
+        private void Reload()
+        {
+            Console.WriteLine("Заряжаю...");
+            isLoaded = true;
+            gunBullet = 30;
+            Console.WriteLine("Заряжено!");
+        }
+        public void OneTap()
+        {
+            if(!isLoaded)
+            {
+                Console.WriteLine("Оружие не заряжено.");
+                Reload();
+            }
+            Console.WriteLine("Стреляю");
+            gunBullet--;
+            Console.WriteLine($"Осталось патронов {gunBullet} / {gunMaxBullet}");
+        }
+        public void Spray()
+        {
+
+            if (!isLoaded)
+            {
+                Console.WriteLine("Оружие не заряжено.");
+                Reload();
+            }
+            Console.WriteLine("Сколько патронов стрелять?");
+            bulletshot = int.Parse(Console.ReadLine());
+            if(bulletshot > gunBullet || bulletshot < 0)
+            {
+                Console.WriteLine("Пожалуйста, введите корректное значение, такое невозможно совершить");
+                bulletshot = int.Parse(Console.ReadLine());
+            }
+            else
+            {
+                SprayBullet();
+            }
+        }
+        private void SprayBullet()
+        {
+            for(int i = 0; i < bulletshot; i++)
+            {
+                Console.WriteLine("Стреляю");
+                gunBullet--;
+                
+            }
+            Console.WriteLine($"Осталось патронов {gunBullet} / {gunMaxBullet}");
+        }
+        public void CheckBullet()
+        {
+            if(gunBullet < 0)
+            {
+                Console.WriteLine("Вы нарушаете законы физики");
+            }
+        }
+        
+    }
+    class Program
+    {
+        static void Main()
+        {
+            AK_47 gun = new AK_47();
+            bool gunbullet = true;
+            while(gunbullet)
+            {
+                gun.OneTap();
+                if(gun.gunBullet <= 0)
+                {
+                    gun.CheckBullet();
+                    break;
+                }
+            }
+        }
+    }
+}
