@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Reflection;
+
+
+namespace Csharp_education
+{
+    class Students
+    {
+        public Students(string firstname, DateTime birthday)
+        {
+            _nameFirst = firstname;
+            _birthday = birthday;
+        }
+
+        public Students(string nameFirst, string nameMiddle, string nameLast, int age, DateTime birthday)
+        {
+            _nameFirst = nameFirst;
+            _nameMiddle = nameMiddle;
+            _nameLast = nameLast;
+            _age = age;
+            _birthday = birthday;
+        }
+
+        public Students(Students student)
+        {
+            _nameFirst = student._nameFirst;
+            _nameMiddle = student._nameMiddle;
+            _nameLast = student._nameLast;
+            _age = student._age;
+            _birthday = student._birthday;
+        }
+
+        private string _nameFirst;
+        private string _nameMiddle;
+        private string _nameLast;
+        private int _age;
+        private DateTime _birthday;
+
+        public void GetLastName(string lastname)
+        {
+            _nameLast = lastname;
+        }
+        
+        public void Print()
+        {
+            Console.WriteLine($"FirstName: {_nameFirst}");
+            Console.WriteLine($"MiddleName: {_nameMiddle}");
+            Console.WriteLine($"LastName: {_nameLast}");
+            Console.WriteLine($"Age: {_age}");
+            Console.WriteLine($"Birthday: {_birthday}");
+
+        }
+
+    }
+    
+    class Program
+    {
+        static void Main()
+        {
+            Students student = new Students("Rodion", "Mikhaylovich", "Mikhailov", 19, new DateTime(2003, 1, 28));
+            Students student2 = new Students(student);
+            student.GetLastName("################");
+            student.Print();
+            Console.WriteLine("=====================================================");
+            student2.Print();
+
+            
+        }
+    }
+}
