@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Reflection;
+
+
+namespace Csharp_education
+{
+    class Students
+    {
+        public Students(string nameFirst, DateTime birthday)
+        {
+            this.nameFirst = nameFirst;
+            this.birthday = birthday;
+        }
+
+        public Students(string nameFirst, string nameMiddle, string nameLast, int age, DateTime birthday) : this(nameFirst, birthday)
+        {
+            this.nameMiddle = nameMiddle;
+            this.nameLast = nameLast;
+            this.age = age;
+           
+        }
+
+        public Students(Students student)
+        {
+            nameFirst = student.nameFirst;
+            nameMiddle = student.nameMiddle;
+            nameLast = student.nameLast;
+            age = student.age;
+            birthday = student.birthday;
+        }
+
+        private string nameFirst;
+        private string nameMiddle;
+        private string nameLast;
+        private int age;
+        private DateTime birthday;
+
+        public void GetLastName(string lastname)
+        {
+            nameLast = lastname;
+        }
+        
+        public void Print()
+        {
+            Console.WriteLine($"FirstName: {nameFirst}");
+            Console.WriteLine($"MiddleName: {nameMiddle}");
+            Console.WriteLine($"LastName: {nameLast}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Birthday: {birthday}");
+
+        }
+
+    }
+    
+    class Program
+    {
+        static void Main()
+        {
+            Students student = new Students("Rodion", "Mikhaylovich", "Mikhailov", 19, new DateTime(2003, 1, 28));
+            Students studentThis = new Students("Rodion", new DateTime(2003, 1, 28));
+            Students student2 = new Students(student);
+            student.GetLastName("################");
+            student.Print();
+            Console.WriteLine("=====================================================");
+            student2.Print();
+            Console.WriteLine("=====================================================");
+            studentThis.Print();
+
+
+        }
+    }
+}
