@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+
+namespace Calculator
+{
+    class SetGet
+    {
+        private int x;
+
+        public void SetX(int x)
+        {
+            if(x < 0)
+            {
+                this.x = 0;
+                return;
+            }
+            if(x > 10)
+            {
+                this.x = 10;
+                return;
+            }
+
+            this.x = x;
+        }
+
+        public int GetX()
+        {
+            return x;
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Введите число от 0 до 10 включительно");
+            SetGet number = new SetGet();
+            number.SetX(-1);
+            int x = number.GetX();
+            Console.WriteLine(x);
+        }
+    }
+}
